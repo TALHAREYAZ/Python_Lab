@@ -1,0 +1,36 @@
+## Introduction:
+In the realm of IoT home monitoring, the integration of cameras has become a fundamental necessity. The increasing prevalence of smart home technologies demands advanced visualization techniques. This project addresses the need for a sophisticated 3D map view of smart home environments using 2D images captured by mobile IoT cameras. The resulting 3D model enhances user experience and facilitates seamless navigation through various rooms and objects within the smart home.
+
+This project focuses on reconstructing a 3D map view of a smart home using 2D images captured from different perspectives. The generated 3D point cloud provides valuable spatial information for applications such as smart home configuration, security system planning, and IoT device placement optimization.
+
+## Methodologies:
+
+We tried different methods to generate a 3D map view of an environment. Some of the methods with their code repository link are 
+
+### Method 1: MiDas-based Point cloud generation
+The goal of this methodology is to leverage the Midas pre-trained model to create a point cloud representation of a person in real time.<br>
+This solution will only generate point cloud of the object not 3D map view.<br>
+#### Libraries used:<br>
+Open CV, Pytorch,Numpy<br>
+#### Repository Link :<br>
+https://github.ecodesamsung.com/SRIB-PRISM/KCT_23IOT05KCT_3D_Map_View_reconstruction_of_Smart_Home_using_2D_images/blob/1f003e7c336cfa970fdf728aed666f8e6797f533/midas_pointcloud/deapthtopointcloud.py
+
+
+### Method 2: sfm (Structure from motion)
+SFM code performs a 3D reconstruction of a scene from a sequence of images, incorporating feature detection, essential matrix estimation, triangulation, and bundle adjustment techniques. The output is a 3D point cloud.<br>
+#### Repository Link:<br>
+https://github.ecodesamsung.com/SRIB-PRISM/KCT_23IOT05KCT_3D_Map_View_reconstruction_of_Smart_Home_using_2D_images/tree/main/sfm
+
+
+### Method 3: Pointcloud using NYU dataset
+Created a 3D point cloud of RGBD data using the NYU dataset. Used Open3d library for point cloud reconstruction of a single rgbd data. This methodology is the closest one to the problem statement.<br>
+#### Libraries used:<br>
+Open3d,opencv,matplotlib<br>
+#### Repository Link:<br>
+https://github.ecodesamsung.com/SRIB-PRISM/KCT_23IOT05KCT_3D_Map_View_reconstruction_of_Smart_Home_using_2D_images/tree/main/3d_reconstruction_nyu <br>
+
+### Future work<br>
+1. Collect quality depth images using rgbd sensor <br>
+2. create a point cloud. (method 3)<br>
+3. use Pointcloud registration to attach point clouds (Open 3d Library) <br>
+4. Create a 3D Mesh out of those point cloud.
